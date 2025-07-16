@@ -1,14 +1,14 @@
         :root {
             --primary: #4b3e79;
-            --secondary: #ffe600;
+            --secondary: #da1c03;
             --light: #ffffff;
             --dark: #212529;
             --gray: #6c757d;
-            --bg-light: #f8f9fa;
+            --bg-light: #bed1e4;
             --bg-dark: #121212;
             --text-light: #333333;
             --text-dark: #f0f0f0;
-            --card-light: #ffffff;
+            --card-light: #dbd1df;
             --card-dark: #1e1e1e;
             --header-light: rgba(255, 255, 255, 0.95);
             --header-dark: rgba(30, 30, 30, 0.95);
@@ -219,6 +219,17 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        .hero-content video {
+         position: absolute;
+         left: 0px;
+         top: 0px;
+         height: 100%;
+         width: 100%;
+         left: 0%;
+         object-fit: cover;
+         z-index: -1;
         }
 
         .hero h1 {
@@ -855,3 +866,116 @@
             }
         }
     
+
+        /* Traveling objects container */
+        .traveling-objects-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        /* Traveling objects */
+        .traveling-object {
+            position: absolute;
+            color: rgba(75, 62, 121, 0.15);
+            font-size: 24px;
+            animation-duration: 20s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            z-index: -1;
+        }
+        
+        /* Dark mode adjustments */
+        .dark-mode .traveling-object {
+            color: rgba(255, 230, 0, 0.15);
+        }
+        
+        /* Plane animations */
+        .plane {
+            animation-name: flyAcross;
+            font-size: 32px;
+        }
+        
+        .plane.reverse {
+            animation-name: flyAcrossReverse;
+        }
+        
+        /* Car animations */
+        .car {
+            animation-name: driveAcross;
+            font-size: 28px;
+        }
+        
+        .car.reverse {
+            animation-name: driveAcrossReverse;
+        }
+        
+        /* Ship animations */
+        .ship {
+            animation-name: sailAcross;
+            font-size: 36px;
+        }
+        
+        .ship.reverse {
+            animation-name: sailAcrossReverse;
+        }
+        
+        /* Suitcase animations */
+        .suitcase {
+            animation-name: floatAcross;
+            font-size: 26px;
+        }
+        
+        .suitcase.reverse {
+            animation-name: floatAcrossReverse;
+        }
+        
+        /* Keyframe animations */
+        @keyframes flyAcross {
+            0% { transform: translateX(-100px) translateY(50px) rotate(15deg); }
+            100% { transform: translateX(calc(100vw + 100px)) translateY(100px) rotate(15deg); }
+        }
+        
+        @keyframes flyAcrossReverse {
+            0% { transform: translateX(calc(100vw + 100px)) translateY(80px) rotate(-15deg); }
+            100% { transform: translateX(-100px) translateY(30px) rotate(-15deg); }
+        }
+        
+        @keyframes driveAcross {
+            0% { transform: translateX(-100px) translateY(calc(100vh - 100px)); }
+            100% { transform: translateX(calc(100vw + 100px)) translateY(calc(100vh - 80px)); }
+        }
+        
+        @keyframes driveAcrossReverse {
+            0% { transform: translateX(calc(100vw + 100px)) translateY(calc(100vh - 120px)); }
+            100% { transform: translateX(-100px) translateY(calc(100vh - 140px)); }
+        }
+        
+        @keyframes sailAcross {
+            0% { transform: translateX(-100px) translateY(calc(100vh - 200px)); }
+            100% { transform: translateX(calc(100vw + 100px)) translateY(calc(100vh - 180px)); }
+        }
+        
+        @keyframes sailAcrossReverse {
+            0% { transform: translateX(calc(100vw + 100px)) translateY(calc(100vh - 220px)); }
+            100% { transform: translateX(-100px) translateY(calc(100vh - 240px)); }
+        }
+        
+        @keyframes floatAcross {
+            0% { transform: translateX(-100px) translateY(150px) rotate(0); }
+            50% { transform: translateX(50vw) translateY(120px) rotate(15deg); }
+            100% { transform: translateX(calc(100vw + 100px)) translateY(150px) rotate(0); }
+        }
+        
+        @keyframes floatAcrossReverse {
+            0% { transform: translateX(calc(100vw + 100px)) translateY(200px) rotate(0); }
+            50% { transform: translateX(50vw) translateY(180px) rotate(-15deg); }
+            100% { transform: translateX(-100px) translateY(200px) rotate(0); }
+        }
+
+        

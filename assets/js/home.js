@@ -91,3 +91,37 @@
         document.querySelectorAll('.service-card, .client-card, .team-member').forEach(card => {
             observer.observe(card);
         });
+
+        // Create traveling objects
+        function createTravelingObjects() {
+            const container = document.getElementById('traveling-objects-bg');
+            const types = ['plane', 'car', 'ship', 'suitcase'];
+            
+            // Create 15 traveling objects
+            for (let i = 0; i < 15; i++) {
+                const object = document.createElement('div');
+                const type = types[Math.floor(Math.random() * types.length)];
+                const direction = Math.random() > 0.5 ? '' : 'reverse';
+                
+                object.className = `traveling-object ${type} ${direction}`;
+                object.innerHTML = `<i class="fas fa-${type}"></i>`;
+                
+                // Random position and delay
+                const topPos = Math.random() * 80 + 10; // 10% to 90%
+                const delay = Math.random() * 20; // 0s to 20s
+                
+                object.style.top = `${topPos}%`;
+                object.style.animationDelay = `-${delay}s`;
+                
+                // Random speed variation
+                const duration = 15 + Math.random() * 25; // 15s to 40s
+                object.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(object);
+            }
+        }
+        
+        // Initialize traveling objects after page loads
+        window.addEventListener('load', createTravelingObjects);
+
+        
