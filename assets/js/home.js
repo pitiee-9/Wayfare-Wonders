@@ -124,4 +124,45 @@
         // Initialize traveling objects after page loads
         window.addEventListener('load', createTravelingObjects);
 
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.destinations-track');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const cardWidth = document.querySelector('.destination-card').offsetWidth;
+            const gap = 32; // 2rem gap in pixels
+            const scrollAmount = cardWidth + gap;
+            
+            // Manual navigation
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Auto-scroll with pause on hover
+            let autoScroll = setInterval(() => {
+                track.scrollBy({ left: 1, behavior: 'auto' });
+            }, 20);
+            
+            const carouselContainer = document.querySelector('.carousel-container');
+            
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoScroll);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', () => {
+                autoScroll = setInterval(() => {
+                    track.scrollBy({ left: 1, behavior: 'auto' });
+                }, 20);
+            });
+            
+            // Reset position for seamless looping
+            track.addEventListener('scroll', () => {
+                // When we reach the duplicated content, reset position seamlessly
+                if (track.scrollLeft >= track.scrollWidth / 2) {
+                    track.scrollLeft = track.scrollLeft - (track.scrollWidth / 2);
+                }
+            });
+        });
