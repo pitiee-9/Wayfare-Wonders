@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wayfare Wonders | Travel Agency</title>
-    <link rel="icon" href="assets/images/logo.png" type="image/png" />
+    <title>About Us - Wayfare Wonders</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
 </head>
 <body>
+    <!-- Traveling objects background -->
     <div class="traveling-objects-bg" id="traveling-objects-bg"></div>
+    
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
             <div class="logo">
-                <img src="assets/images/WhatsApp Image 2025-07-16 at 18.53.40.jpeg" style="border-radius: 50%;" alt="Wayfare Wonders Logo">
+                <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Wayfare Wonders Logo">
                 <h1>Wayfare <span>Wonders</span></h1>
             </div>
-                <nav>
+            <nav>
                 <ul id="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -39,31 +40,26 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-         <video autoplay muted loop playsinline class="hero-video">
-            <source src="assets/videos/intropage.mp4" type="video/mp4" />
-               Your browser does not support the video tag.
-         </video>
-            <h1>See the World, Live the Wonder</h1>
-            <p>Personalized travel experiences that turn every journey into a luxurious and unforgettable adventure.</p>
-            <div class="hero-btns">
-                <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="#contact" class="btn btn-outline">Contact Us</a>
-            </div>
+    <section class="about-hero" id="home">
+        <div class="about-hero-content">
+            <h1>About Wayfare Wonders</h1>
+            <p>Your trusted partner for unforgettable travel experiences in Rwanda and beyond</p>
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- About Intro Section -->
+    <section class="about-intro" id="about">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Wayfare Wonders</h2>
-                    <p>Wayfare Wonders Travel is a premier travel agency based in Kigali, Rwanda. We specialize in personalized and seamless travel experiences that turn every journey into a luxurious and unforgettable adventure.</p>
+            <div class="about-intro-content">
+                <div class="about-intro-text">
+                    <h2>Our Story</h2>
+                    <p>Wayfare Wonders Travel is a premier travel agency based in Kigali, Rwanda. We specialize in <strong>personalized and seamless travel experiences</strong> that turn every journey into a luxurious and unforgettable adventure.</p>
+                    <p>Founded by ISHIMWE Ange Aimee, our agency has grown from a small passion project to Rwanda's leading travel specialist. We believe that travel should be transformative, inspiring, and accessible to everyone.</p>
                     <p>Whether you're planning a safari, a business trip, or a romantic getaway, our dedicated team handles every detail — from custom itineraries and flight bookings to hotel reservations and visa support.</p>
                     <p>We're not just a travel agency. We're your travel partner — committed to making each journey smooth, stress-free, and truly exceptional.</p>
-                    <div class="contact-details" style="margin-top: 20px;">
+                    
+                    <div class="contact-details" style="margin-top: 30px;">
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -84,8 +80,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
+                <div class="about-intro-image">
                     <img src="https://images.unsplash.com/photo-1551632436-7a879920dd8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Kigali Rwanda">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="why">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us?</h2>
+                <p>We go beyond ordinary travel services to create extraordinary experiences</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Personalized Service</h3>
+                    <p>Every itinerary is crafted to your specific preferences, interests, and travel style.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Stress-Free Travel</h3>
+                    <p>We handle all the details so you can focus on enjoying your journey.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Local Expertise</h3>
+                    <p>Our deep knowledge of Rwanda ensures authentic and memorable experiences.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Dedicated Support</h3>
+                    <p>24/7 assistance before, during, and after your trip.</p>
                 </div>
             </div>
         </div>
@@ -96,7 +132,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>We offer comprehensive travel solutions tailored to your needs</p>
+                <p>Comprehensive travel solutions tailored to your needs</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -146,7 +182,7 @@
     </section>
 
     <!-- Who We Serve Section -->
-    <section class="clients" id="blog">
+    <section class="clients" id="clients">
         <div class="container">
             <div class="section-title">
                 <h2>Who We Serve</h2>
@@ -180,201 +216,6 @@
                     </div>
                     <h3>International Visitors</h3>
                     <p>Exploring Rwanda's natural and cultural wonders</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="destinations">
-        <div class="container">
-            <div class="section-title">
-                <h2>Popular Destinations</h2>
-                <p>Discover our most sought-after travel experiences around the world.</p>
-            </div>
-            
-            <div class="carousel-container">
-                <div class="destinations-track">
-                    <div class="destination-card">
-                        <img src="assets/images/1.jpeg" alt="Rwanda Gorilla Trekking">
-                        <div class="destination-info">
-                            <h3>Rwanda Gorilla Trekking</h3>
-                            <p>Experience the majestic mountain gorillas in their natural habitat.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-                    
-                    <div class="destination-card">
-                        <img src="assets/images/2.jpeg" alt="Serengeti Safari">
-                        <div class="destination-info">
-                            <h3>Serengeti Safari</h3>
-                            <p>Witness the great migration in Tanzania's iconic national park.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-
-                    <div class="destination-card">
-                        <img src="assets/images/3.jpeg" alt="Victoria Falls">
-                        <div class="destination-info">
-                            <h3>Victoria Falls</h3>
-                            <p>Marvel at one of the world's largest waterfalls on the Zambia-Zimbabwe border.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-
-                    <div class="destination-card">
-                        <img src="assets/images/4.jpeg" alt="Masai Mara">
-                        <div class="destination-info">
-                            <h3>Masai Mara</h3>
-                            <p>Experience Kenya's premier wildlife destination and the annual wildebeest migration.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-
-                    <div class="destination-card">
-                        <img src="assets/images/5.jpeg" alt="Zanzibar Beaches">
-                        <div class="destination-info">
-                            <h3>Zanzibar Beaches</h3>
-                            <p>Relax on pristine beaches with crystal-clear turquoise waters.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-                    
-                    <div class="destination-card">
-                        <img src="assets/images/6.jpeg" alt="Okavango Delta">
-                        <div class="destination-info">
-                            <h3>Okavango Delta</h3>
-                            <p>Explore the unique inland delta in Botswana by traditional mokoro canoe.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Duplicate cards for seamless looping -->
-                    <div class="destination-card">
-                        <img src="assets/images/7.jpeg" alt="Rwanda Gorilla Trekking">
-                        <div class="destination-info">
-                            <h3>Rwanda Gorilla Trekking</h3>
-                            <p>Experience the majestic mountain gorillas in their natural habitat.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-                    
-                    <div class="destination-card">
-                        <img src="assets/images/8.jpeg" alt="Serengeti Safari">
-                        <div class="destination-info">
-                            <h3>Serengeti Safari</h3>
-                            <p>Witness the great migration in Tanzania's iconic national park.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-
-                    <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Victoria Falls">
-                        <div class="destination-info">
-                            <h3>Victoria Falls</h3>
-                            <p>Marvel at one of the world's largest waterfalls on the Zambia-Zimbabwe border.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-
-                    <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1551632436-5a6e5a5d8d1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Masai Mara">
-                        <div class="destination-info">
-                            <h3>Masai Mara</h3>
-                            <p>Experience Kenya's premier wildlife destination and the annual wildebeest migration.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-
-                    <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Zanzibar Beaches">
-                        <div class="destination-info">
-                            <h3>Zanzibar Beaches</h3>
-                            <p>Relax on pristine beaches with crystal-clear turquoise waters.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-                    
-                    <div class="destination-card">
-                        <img src="https://images.unsplash.com/photo-1593111774240-d529f12cfd69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Okavango Delta">
-                        <div class="destination-info">
-                            <h3>Okavango Delta</h3>
-                            <p>Explore the unique inland delta in Botswana by traditional mokoro canoe.</p>
-                            <button class="btn btn-outline">Explore Tour</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-controls">
-                <div class="carousel-btn" id="prevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="carousel-btn" id="nextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
-                <p>Meet the dedicated professionals behind Wayfare Wonders</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Ange Aimee">
-                        <div class="team-overlay">
-                            <h4>Ange Aimee</h4>
-                            <p>Travel Consultant</p>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>ISHIMWE Ange Aimee</h3>
-                        <p>Founder & CEO</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="assets/images/WhatsApp Image 2025-07-16 at 20.06.25.jpeg" alt="Travel Expert">
-                        <div class="team-overlay">
-                            <h4>David K.</h4>
-                            <p>Travel Specialist</p>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>David Kabera</h3>
-                        <p>Travel Operations Manager</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Travel Consultant">
-                        <div class="team-overlay">
-                            <h4>Grace M.</h4>
-                            <p>Customer Relations</p>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>Grace Mutoni</h3>
-                        <p>Customer Experience Director</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="team-image">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Safari Expert">
-                        <div class="team-overlay">
-                            <h4>James T.</h4>
-                            <p>Safari Specialist</p>
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h3>James Tuyishime</h3>
-                        <p>Adventure & Safari Expert</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -486,7 +327,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -519,6 +360,6 @@
         </div>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/about.js"></script>
 </body>
 </html>
