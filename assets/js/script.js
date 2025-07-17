@@ -1,4 +1,4 @@
-// Theme Toggle
+// Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
         
@@ -12,7 +12,7 @@
             themeIcon.classList.add('fa-sun');
         }
         
-        themeToggle.addEventListener('click', () => {
+        themeToggle.addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
             
             if (document.body.classList.contains('dark-mode')) {
@@ -26,34 +26,143 @@
             }
         });
         
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const navMenu = document.getElementById('nav-menu');
         
-        menuToggle.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            
-            // Change menu icon
-            const icon = menuToggle.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = document.querySelectorAll('#nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
         });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
         
-        // Join button functionality
+        // Initialize animations on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
         
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.service-card, .client-card, .team-member').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Create traveling objects
+        function createTravelingObjects() {
+            const container = document.getElementById('traveling-objects-bg');
+            const types = ['plane', 'car', 'ship', 'suitcase'];
+            
+            // Create 15 traveling objects
+            for (let i = 0; i < 15; i++) {
+                const object = document.createElement('div');
+                const type = types[Math.floor(Math.random() * types.length)];
+                const direction = Math.random() > 0.5 ? '' : 'reverse';
+                
+                object.className = `traveling-object ${type} ${direction}`;
+                object.innerHTML = `<i class="fas fa-${type}"></i>`;
+                
+                // Random position and delay
+                const topPos = Math.random() * 80 + 10; // 10% to 90%
+                const delay = Math.random() * 20; // 0s to 20s
+                
+                object.style.top = `${topPos}%`;
+                object.style.animationDelay = `-${delay}s`;
+                
+                // Random speed variation
+                const duration = 15 + Math.random() * 25; // 15s to 40s
+                object.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(object);
+            }
+        }
+        
+        // Initialize traveling objects after page loads
+        window.addEventListener('load', createTravelingObjects);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.destinations-track');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const cardWidth = document.querySelector('.destination-card').offsetWidth;
+            const gap = 32; // 2rem gap in pixels
+            const scrollAmount = cardWidth + gap;
+            
+            // Manual navigation
+            nextBtn.addEventListener('click', () => {
+                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            // Auto-scroll with pause on hover
+            let autoScroll = setInterval(() => {
+                track.scrollBy({ left: 1, behavior: 'auto' });
+            }, 20);
+            
+            const carouselContainer = document.querySelector('.carousel-container');
+            
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(autoScroll);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', () => {
+                autoScroll = setInterval(() => {
+                    track.scrollBy({ left: 1, behavior: 'auto' });
+                }, 20);
+            });
+            
+            // Reset position for seamless looping
+            track.addEventListener('scroll', () => {
+                // When we reach the duplicated content, reset position seamlessly
+                if (track.scrollLeft >= track.scrollWidth / 2) {
+                    track.scrollLeft = track.scrollLeft - (track.scrollWidth / 2);
+                }
+            });
+        });
